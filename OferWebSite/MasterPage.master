@@ -1,0 +1,221 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="StyleSheet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style type="text/css">
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+
+#ContentPlaceHolder1 {
+    padding-top: 50px; /* הוספת ריווח עליון */
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* מיקום הקטגוריות בצד ימין */
+    background-color: white;
+    border: 1px solid rgb(148, 162, 210);
+    padding: 10px 20px;
+    position: sticky; /* הופך את הסרגל לסטיקי */
+    top: 0; /* קובע שהתפריט יהיה קבוע בחלק העליון */
+    z-index: 1000; /* מבטיח שהתפריט יהיה מעל תכנים אחרים */
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.logo {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    width: 110px; /* קביעת רוחב הלוגו */
+    height: 110px; /* קביעת גובה הלוגו כדי לשמור על יחס 1:1 (עיגול) */
+    background-color:white;
+    border: 1px solid rgb(148, 162, 210);
+    border-radius: 50%; /* עיגול */
+    object-fit: cover; /* מאפשר ללוגו למלא את כל העיגול בצורה נכונה */
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end; /* מסדר את הקטגוריות מימין לשמאל */
+    margin-right: 200px; /* הוספת ריווח כדי להזיז את הקטגוריות שמאלה */
+
+}
+
+.menu a:hover {
+    color: #ddd;
+}
+
+#accessibility-menu {
+    position: fixed; /* הופך אותו לדביק */
+    bottom: 20px; /* המרחק התחתון מהקצה של הדף */
+    left: 0; /* מגדיר את המרחק מצד שמאל ל-0, כך שהמלבן ייגע בצד השמאלי של המסך */
+    width: 40px; 
+    z-index: 1000; /* לוודא שהאייקון יהיה תמיד מעל אלמנטים אחרים */
+    background-color: cornflowerblue; /* צבע רקע למלבן */
+    padding: 4px;
+    border: none;
+}
+
+#accessibility-menu button {
+    font-size: 17px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: white;
+    height: 15px; /* גובה הכפתור */
+    width: auto; /* רוחב אוטומטי */
+    margin: 0; /* לוודא שהכפתור לא ייצור רווחים מיותרים */
+    text-align: center; /* מיישר את הטקסט במרכז */
+}
+
+#accessibility-options {
+    display: none;
+    position: fixed; /* הופך אותו לדביק */
+    bottom: 60px; /* המרחק התחתון מהכפתור */
+    left: 0; /* המרחק מצד שמאל */
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 30%; /* ממליץ להרחיב גם את התפריט לאורך כל הרוחב */
+}
+
+#accessibility-options button {
+    margin-bottom: 10px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    background-color: #5b565b;
+    color: white;
+}
+
+#accessibility-options button:hover {
+    background-color: #4a4a4a;
+}
+
+
+
+    </style>
+</head>
+
+       <script type="text/javascript">
+           function toggleFontSize() {
+               const body = document.body;
+               body.style.fontSize = body.style.fontSize === "18px" ? "16px" : "18px";
+           }
+
+           function toggleContrast() {
+               const body = document.body;
+               if (body.style.backgroundColor === "black") {
+                   body.style.backgroundColor = "white";
+                   body.style.color = "black";
+               } else {
+                   body.style.backgroundColor = "black";
+                   body.style.color = "white";
+               }
+           }
+
+           function toggleTextToSpeech() {
+               const speech = new SpeechSynthesisUtterance();
+               speech.text = document.body.innerText;
+               window.speechSynthesis.speak(speech);
+           }
+           function toggleAccessibilityMenu() {
+               const menu = document.getElementById("accessibility-options");
+               menu.style.display = menu.style.display === "none" || menu.style.display === "" ? "block" : "none";
+           }
+
+           function toggleFontSize() {
+               const body = document.body;
+               body.style.fontSize = body.style.fontSize === "18px" ? "16px" : "18px";
+           }
+
+           function toggleContrast() {
+               const body = document.body;
+               if (body.style.backgroundColor === "black") {
+                   body.style.backgroundColor = "white";
+                   body.style.color = "black";
+               } else {
+                   body.style.backgroundColor = "black";
+                   body.style.color = "white";
+               }
+           }
+
+           function toggleTextToSpeech() {
+               const speech = new SpeechSynthesisUtterance();
+               speech.text = document.body.innerText;
+               window.speechSynthesis.speak(speech);
+           }
+
+       </script>
+
+<body style="background-color:white">
+
+      <div class="navbar">
+      <!-- לוגו -->
+      <img src="doggos/לוגו.png" alt="Logo" class="logo">
+
+      <!-- תפריט -->
+      <div class="menu" style="text-align:right">
+          <a href="login.aspx" >מחשבון משכנתא</a>
+          <a href="Register.aspx">הרשמה</a>
+          <a href="About.aspx">אודות</a>
+          <a href="HomePage.aspx">דף ראשי</a>
+      </div>
+  </div>
+
+
+
+<!-- דיב לאייקון נגישות -->
+<div id="accessibility-menu">
+    <button onclick="toggleAccessibilityMenu()">
+        <i class="fa fa-wheelchair"></i> <!-- אייקון של הגדרות -->
+    </button>
+</div>
+
+<!-- דיב של תפריט אפשרויות נגישות -->
+<div id="accessibility-options">
+    <button onclick="toggleFontSize()">שנה גודל גופן</button>
+    <button onclick="toggleContrast()">הפוך קונטרסט</button>
+    <button onclick="toggleTextToSpeech()">הפעל דיבור טקסט</button>
+</div>
+
+
+    <div style="padding-top: 60px">
+        <table>
+            <tr>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                          </asp:ContentPlaceHolder>
+
+
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
+

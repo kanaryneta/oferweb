@@ -1,0 +1,240 @@
+﻿body {
+    text-align: center;
+    font-family: Arial;
+}
+
+.spacial {
+    text-shadow: 3px 2px red;
+    font-family: Arial;
+    text-align: center;
+}
+
+
+
+.ground {
+    background-image: url('תמונות/רקע.jpg');
+    background-repeat: no-repeat;
+}
+
+
+.auto-style6 {
+    width: 100%;
+    height: 709px;
+}
+
+.size {
+    font-size: 10px;
+    font-family: Arial;
+}
+
+
+.td1_pink {
+    font-size: 40px;
+    height: 4px;
+    background-color: #f1f1f1;
+}
+
+
+.td2_grey {
+    font-size: 30px;
+    height: 475px;
+    background-color: lightgrey;
+}
+
+.td_yellow {
+    font-size: 30px;
+    background-color: lemonchiffon;
+}
+
+.td_right {
+    text-align: right;
+}
+
+
+.header {
+    padding: 60px;
+    text-align: center;
+    background-image: url('תמונות/Untitled.jpg');
+    color: white;
+}
+
+.slogen {
+    padding: 60px;
+    text-align: center;
+    background-image: url('תמונות/Untitled.jpg');
+    color: white;
+    width: 100%;
+}
+
+.img1 {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.Square {
+    border-style: outset;
+    background-color: darkgrey;
+}
+
+.button {
+    background-color: white;
+    border-color: dodgerblue;
+    color: dodgerblue;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.ariel {
+    text-align: center;
+    font-family: Arial;
+}
+
+.traning {
+    color: red;
+    height: 22px;
+    width: 1043px;
+}
+
+footer {
+    width: 101%;
+    background-color: #e9e2e7;
+    color: dimgray;
+    text-align: center;
+}
+
+.td_link:link {
+    color: dimgray;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.td_link:visited {
+    color: dimgray;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.td_link:hover {
+    color: lavender;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.td_link:active {
+    color: lavender;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+
+
+.td_link_footer:link {
+    color: dimgray;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.td_link_footer:visited {
+    color: dimgray;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.td_link_footer:hover {
+    color: dimgray;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.td_link_footer:active {
+    color: dimgray;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+h1, h4, h5, h6 {
+    font-family: "Amatic SC", sans-serif;
+}
+
+h1 {
+    font-size: 5vw;
+    text-align: right;
+}
+
+body, html {
+    height: 100%
+}
+
+.btn {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+
+/* Gray */
+.default {
+    border-color: #e7e7e7;
+    color: black;
+}
+
+    .default:hover {
+        background: #e7e7e7;
+    }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+
+    .rate:not(:checked) > input {
+        position: absolute;
+        top: -9999px;
+    }
+
+    .rate:not(:checked) > label {
+        float: right;
+        width: 1em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 30px;
+        color: #ccc;
+    }
+
+        .rate:not(:checked) > label:before {
+            content: '★ ';
+        }
+
+    .rate > input:checked ~ label {
+        color: #ffc700;
+    }
+
+    .rate:not(:checked) > label:hover,
+    .rate:not(:checked) > label:hover ~ label {
+        color: #deb217;
+    }
+
+    .rate > input:checked + label:hover,
+    .rate > input:checked + label:hover ~ label,
+    .rate > input:checked ~ label:hover,
+    .rate > input:checked ~ label:hover ~ label,
+    .rate > label:hover ~ input:checked ~ label {
+        color: #c59b08;
+    }
